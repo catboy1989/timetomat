@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_root_layout"
+    style="@style/linear_layout_vertical_main">
+    <TextView
+        android:id="@+id/work_end_text"
+        style="@style/main_text"
+        android:text="@string/work_complete"/>
+    <TextView
+        android:id="@+id/rest_end_text"
+        style="@style/main_text"
+        android:text="@string/break_finish"
+        android:visibility="gone"/>
+    <Button
+        android:id="@+id/short_break_button"
+        android:text="@string/little_break"
+        style="@style/alarm_button" />
+    <Button
+        android:id="@+id/long_break_button"
+        android:text="@string/big_break"
+        style="@style/alarm_button" />
+    <Button
+        android:id="@+id/start_work_button"
+        android:text="@string/start_work"
+        style="@style/alarm_button"
+        android:visibility="gone"/>
+    <Button
+        android:id="@+id/turn_off_alarm_button"
+        android:text="@string/turn_off"
+        style="@style/alarm_button" />
+
+</LinearLayout>

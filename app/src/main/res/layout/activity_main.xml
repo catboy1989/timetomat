@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_root_layout"
+    style="@style/linear_layout_vertical_main">
+    <TextView
+        android:id="@+id/select_music"
+        style="@style/main_text"
+        android:text="выберите мелодию:"/>
+    <TextView
+        android:id="@+id/music_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        style="@style/text_timer_main"
+        android:text="музыка"
+        android:textSize="18sp"/>
+    <TextView
+        style="@style/main_text"
+        android:text="таймер работы"/>
+    <LinearLayout style="@style/linear_layout_horizontal_main">
+        <TextView
+            android:id="@+id/work_text"
+            style="@style/text_timer_main"
+            android:text="25 : 00"/>
+        <Button
+            android:id="@+id/work_button"
+            style="@style/button_main"
+            android:text="включить"/>
+    </LinearLayout>
+    <TextView
+        style="@style/main_text"
+        android:text="таймер короткого отдыха"/>
+    <LinearLayout style="@style/linear_layout_horizontal_main">
+        <TextView
+            android:id="@+id/short_text"
+            style="@style/text_timer_main"
+            android:text="5 : 00"/>
+        <Button
+            android:id="@+id/short_button"
+            style="@style/button_main"
+            android:text="включить"/>
+    </LinearLayout>
+    <TextView
+        style="@style/main_text"
+        android:text="таймер длинного отдыха"/>
+    <LinearLayout style="@style/linear_layout_horizontal_main">
+        <TextView
+            android:id="@+id/long_text"
+            style="@style/text_timer_main"
+            android:text="15 : 00"/>
+        <Button
+            android:id="@+id/long_button"
+            style="@style/button_main"
+            android:text="включить"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/turn_off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:text="выключить"
+        android:textSize="24sp"/>
+
+</LinearLayout>
