@@ -7,12 +7,8 @@ import androidx.activity.result.ActivityResultCallback
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.catboy.timetomat.models.TimersTime
 import com.catboy.timetomat.models.Alarm
-import com.catboy.timetomat.usecases.timer.GetTimersTime
-import com.catboy.timetomat.usecases.timer.SaveTimer
-import com.catboy.timetomat.usecases.timer.StopTimerService
-import com.catboy.timetomat.usecases.timer.TimerStarter
+import com.catboy.timetomat.models.TimersTime
 import com.catboy.timetomat.usecases.alarm.SetAlarm
 import com.catboy.timetomat.usecases.alarm.StopAlarm
 import com.catboy.timetomat.usecases.music.GetMusicNameFromRepository
@@ -20,6 +16,10 @@ import com.catboy.timetomat.usecases.music.GetMusicNameFromUri
 import com.catboy.timetomat.usecases.music.SaveMusic
 import com.catboy.timetomat.usecases.permissions.IsPermissionsDenied
 import com.catboy.timetomat.usecases.startactivity.StartPermissionsActivity
+import com.catboy.timetomat.usecases.timer.GetTimersTime
+import com.catboy.timetomat.usecases.timer.SaveTimer
+import com.catboy.timetomat.usecases.timer.StopTimerService
+import com.catboy.timetomat.usecases.timer.TimerStarter
 
 class MainActivityViewModel(application: Application?) :
     AndroidViewModel(application!!), ActivityResultCallback<Uri?> {

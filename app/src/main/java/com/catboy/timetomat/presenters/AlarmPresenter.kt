@@ -16,7 +16,9 @@ class AlarmPresenter(private val view: AlarmView) {
 
     fun setView(intent: Intent) {
         val name = intent.getStringExtra(Intenter.NAME)
-        if (!name.equals(Alarm.WORK.toString())) {
+        if (name == Alarm.WORK.toString()) {
+            view.setEndWorkView()
+        }else {
             view.setEndRestView()
         }
     }

@@ -6,4 +6,5 @@ interface AlarmView {
 
     fun getApplicationContext(): Context
     fun setEndRestView()
+    fun setEndWorkView()
 }

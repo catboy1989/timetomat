@@ -53,13 +53,12 @@ class AlarmActivity : AppCompatActivity(), AlarmView {
         startWorkButton = findViewById(R.id.start_work_button)
         turnOffAlarmButton = findViewById(R.id.turn_off_alarm_button)
 
-        presenter!!.setView(intent)
-
         shortBreakButton!!.setOnClickListener { presenter!!.shortBreakAction() }
         longBreakButton!!.setOnClickListener { presenter!!.longBreakAction() }
         startWorkButton!!.setOnClickListener { presenter!!.startWorkAction() }
         turnOffAlarmButton!!.setOnClickListener { presenter!!.turnOffAction() }
 
+        presenter!!.setView(intent)
         presenter!!.startMediaPlayer()
     }
 
@@ -69,6 +68,14 @@ class AlarmActivity : AppCompatActivity(), AlarmView {
         shortBreakButton!!.visibility = View.GONE
         longBreakButton!!.visibility = View.GONE
         startWorkButton!!.visibility = View.VISIBLE
+    }
+
+    override fun setEndWorkView() {
+        workEndText!!.visibility = View.VISIBLE
+        restEndText!!.visibility = View.GONE
+        shortBreakButton!!.visibility = View.VISIBLE
+        longBreakButton!!.visibility = View.VISIBLE
+        startWorkButton!!.visibility = View.GONE
     }
 
     override fun onDestroy() {

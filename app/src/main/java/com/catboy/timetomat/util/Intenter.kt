@@ -4,7 +4,6 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.provider.Settings
 import com.catboy.timetomat.models.Alarm
 import com.catboy.timetomat.screens.AlarmActivity
@@ -79,50 +78,28 @@ class Intenter(private val context: Context) {
     fun getAlarmInfoPendingIntent(): PendingIntent? {
         val alarmInfoIntent = Intent(context, MainActivity::class.java)
         alarmInfoIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            PendingIntent.getActivity(
-                context, REQUEST_CODE_INFO,
-                alarmInfoIntent, PendingIntent.FLAG_IMMUTABLE
-            )
-        } else {
-            PendingIntent.getActivity(
-                context, REQUEST_CODE_INFO,
-                alarmInfoIntent,
-                PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
-            )
-        }
+        return PendingIntent.getActivity(
+            context, REQUEST_CODE_INFO, alarmInfoIntent,
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+        )
     }
 
     fun getAlarmActionPendingIntent(): PendingIntent? {
         val intent = Intent(context, AlarmActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            PendingIntent.getActivity(
-                context, REQUEST_CODE_ACTION,
-                intent, PendingIntent.FLAG_IMMUTABLE
-            )
-        } else {
-            PendingIntent.getActivity(
-                context, REQUEST_CODE_ACTION,
-                intent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
-            )
-        }
+        return PendingIntent.getActivity(
+            context, REQUEST_CODE_ACTION, intent,
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+        )
     }
 
     fun getAlarmActionPendingIntent(name: String): PendingIntent? {
         val intent = Intent(context, AlarmActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
         intent.putExtra(NAME, name)
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            PendingIntent.getActivity(
-                context, REQUEST_CODE_ACTION,
-                intent, PendingIntent.FLAG_IMMUTABLE
-            )
-        } else {
-            PendingIntent.getActivity(
-                context, REQUEST_CODE_ACTION,
-                intent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
-            )
-        }
+        return PendingIntent.getActivity(
+            context, REQUEST_CODE_ACTION, intent,
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+        )
     }
 }
